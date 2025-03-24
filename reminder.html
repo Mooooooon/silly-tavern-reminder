@@ -1,32 +1,47 @@
 <div class="reminder-extension-settings">
     <div class="inline-drawer">
         <div class="inline-drawer-toggle inline-drawer-header">
-            <b>酒馆消息提醒</b>
+            <b><i class="fa-solid fa-bell"></i> 酒馆消息提醒</b>
             <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
         </div>
         <div class="inline-drawer-content">
-            <div>
-                <strong>消息提醒开关</strong>
+            <div class="reminder-extension_block main-toggle flex-container">
+                <input id="extension_enabled" type="checkbox" />
+                <label for="extension_enabled"><strong>启用消息提醒</strong></label>
+                <i title="总开关：控制是否启用整个消息提醒功能" class="fa-solid fa-info-circle"></i>
             </div>
-            <div class="reminder-extension_block flex-container">
-                <input id="title_reminder_setting" type="checkbox" />
-                <label for="title_reminder_setting">启用新消息标题提醒</label>
-                <i title="当切换到其他标签页时，收到新消息会通过闪烁标题提醒" class="fa-solid fa-info-circle"></i>
-            </div>
-            <div class="reminder-extension_block flex-container">
-                <input id="notification_setting" type="checkbox" />
-                <label for="notification_setting">启用新消息系统提醒</label>
-                <i title="当切换到其他标签页时，收到新消息会通过系统通知提醒" class="fa-solid fa-info-circle"></i>
-            </div>
-            <div>
-                <strong>权限申请</strong>
-            </div>
-            <div class="reminder-extension_block flex-container">
-                <input id="request_notification_permission" class="menu_button" type="button" value="申请通知权限" />
-                <i title="如果系统通知无法正常工作，请点击此按钮重新申请权限" class="fa-solid fa-info-circle"></i>
+            <hr class="sysHR compact-hr" />
+
+            <div class="settings-subgroup">
+                <strong>提醒方式</strong>
+                <div class="reminder-extension_block flex-container">
+                    <input id="title_reminder_setting" type="checkbox" />
+                    <label for="title_reminder_setting">标题提醒</label>
+                    <i title="当切换到其他标签页时，收到新消息会通过闪烁标题提醒" class="fa-solid fa-info-circle"></i>
+                </div>
+                <div class="reminder-extension_block flex-container">
+                    <input id="notification_setting" type="checkbox" />
+                    <label for="notification_setting">系统通知</label>
+                    <i title="当切换到其他标签页时，收到新消息会通过系统通知提醒" class="fa-solid fa-info-circle"></i>
+                </div>
+                <div class="reminder-extension_block flex-container">
+                    <input id="tick_sound_setting" type="checkbox" />
+                    <label for="tick_sound_setting">滴答声音效</label>
+                    <i title="收到新消息时，在网页内播放滴答声提醒" class="fa-solid fa-info-circle"></i>
+                </div>
+                <div id="tick_sound_error" class="reminder-extension_block flex-container" style="color: #ff7777; display: none;">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    <span>滴答声音频加载失败，请检查音频文件是否存在或已损坏</span>
+                </div>
+                <div class="reminder-extension_block flex-container button-group">
+                    <input id="test_tick_sound" class="menu_button" type="button" value="测试滴答声" />
+                    <input id="request_notification_permission" class="menu_button" type="button" value="申请通知权限" />
+                </div>
             </div>
 
-            <hr class="sysHR" />
+            <div class="reminder-extension_block flex-container" style="justify-content: center; font-size: 0.8rem; color: var(--grey30); margin-top: 10px;">
+                <span>酒馆消息提醒扩展 v1.0</span>
+            </div>
         </div>
     </div>
 </div>

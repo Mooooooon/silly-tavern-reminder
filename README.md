@@ -16,6 +16,11 @@ A SillyTavern extension that provides message reminder functionality.
   
   - When switched to other tabs, new messages will be reminded by system notification
 
+- 🔊 滴答声提醒 | Tick sound reminder
+  - 收到新消息时，在网页内播放滴答声提醒
+  
+  - When receiving new messages, a tick sound will be played in the web page
+
 ## 安装方法 | Installation
 
 1. 打开 SillyTavern 扩展管理页面
@@ -71,6 +76,10 @@ If you encounter any issues or have suggestions, feel free to:
 - 提交 Pull Request 来改进代码
 
   Submit a Pull Request to improve the code
+
+## 贡献者 | Contributors
+
+- 404nayFound
 
 ## 许可证 | License
 

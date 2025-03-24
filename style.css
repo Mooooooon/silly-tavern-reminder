@@ -1,9 +1,226 @@
+/* 基础样式 */
+.reminder-extension-settings {
+    margin-bottom: 5px;
+}
+
+.reminder-extension_block {
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* 紧凑的分隔线 */
+.compact-hr {
+    margin: 5px 0;
+}
+
+/* 子设置组 */
+.settings-subgroup {
+    padding-left: 5px;
+}
+
+/* 按钮组 */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 总开关样式 */
+.main-toggle {
+    margin: 5px 0;
+}
+
+.main-toggle label strong {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+}
+
+.main-toggle input[type="checkbox"]:checked {
+    background: var(--green);
+    border-color: var(--green);
+}
+
 .reminder-extension_block i.fa-info-circle {
     display: flex;
     align-items: center;
-    margin-left: 5px;
+    margin-left: 8px;
+    color: var(--grey40);
+    transition: color 0.2s ease;
 }
 
+.reminder-extension_block i.fa-info-circle:hover {
+    color: var(--grey70);
+}
+
+.reminder-extension_block i.fa-volume-high {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    color: var(--grey40);
+}
+
+.reminder-extension_block i.fa-exclamation-triangle {
+    margin-right: 8px;
+    color: #ff5555;
+}
+
+.reminder-extension_block label {
+    cursor: pointer;
+    user-select: none;
+    margin-left: 8px;
+    flex: 1;
+}
+
+/* 美化按钮 */
+.reminder-extension_block .menu_button {
+    background: var(--primary-500);
+    color: var(--white);
+    border: none;
+    border-radius: 15px;
+    padding: 4px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reminder-extension_block .menu_button:hover {
+    background: var(--primary-600);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.reminder-extension_block .menu_button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 测试滴答声按钮特殊样式 */
+#test_tick_sound {
+    background: var(--green);
+    position: relative;
+    padding-left: 25px;
+}
+
+#test_tick_sound:before {
+    content: '\f028';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#test_tick_sound:hover {
+    background: var(--green-600);
+}
+
+/* 通知权限申请按钮特殊样式 */
 #request_notification_permission {
-    margin-left: 10px;
+    background: var(--blue);
+    position: relative;
+    padding-left: 25px;
+}
+
+#request_notification_permission:before {
+    content: '\f0f3';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#request_notification_permission:hover {
+    background: var(--blue-600);
+}
+
+/* 美化复选框 */
+.reminder-extension_block input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 2px solid var(--grey30);
+    background: var(--black);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.reminder-extension_block input[type="checkbox"]:checked {
+    background: var(--primary-500);
+    border-color: var(--primary-500);
+}
+
+.reminder-extension_block input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: var(--white);
+    font-size: 12px;
+    left: 2px;
+    top: -2px;
+}
+
+.reminder-extension_block input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-300);
+}
+
+.reminder-extension_block input[type="checkbox"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 错误消息样式 */
+#tick_sound_error {
+    background-color: rgba(255, 85, 85, 0.1);
+    border-left: 3px solid #ff5555;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+/* 标题样式 */
+.reminder-extension-settings .inline-drawer-header {
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.reminder-extension-settings .inline-drawer-header:hover {
+    background-color: var(--grey15);
+}
+
+.reminder-extension-settings strong {
+    font-size: 0.95rem;
+    color: var(--grey70);
+    display: block;
+    margin: 10px 0 5px 0;
+    border-bottom: 1px solid var(--grey15);
+    padding-bottom: 3px;
+}
+
+/* 响应式布局 */
+@media (max-width: 640px) {
+    .reminder-extension_block {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reminder-extension_block label {
+        margin: 6px 0;
+    }
+
+    .reminder-extension_block i.fa-info-circle,
+    .reminder-extension_block i.fa-volume-high {
+        margin-left: 0;
+        margin-top: 4px;
+    }
 }
